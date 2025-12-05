@@ -32,7 +32,7 @@ class VSegments {
       );
     }
     
-    this.model = options.model || 'gemini-flash-latest';
+    this.model = options.model || 'gemini-3-pro-preview';
     this.temperature = options.temperature !== undefined ? options.temperature : 0.5;
     this.maxObjects = options.maxObjects || 25;
     
@@ -131,15 +131,25 @@ If an object is present multiple times, name them according to their unique char
     });
     
     // Generate content
-    const result = await model.generateContent({
-      contents: [{ role: 'user', parts: [{ text: prompt }, image] }],
-      generationConfig: {
-        temperature: this.temperature,
+    let result, response, text;
+    try {
+      result = await model.generateContent({
+        contents: [{ role: 'user', parts: [{ text: prompt }, image] }],
+        generationConfig: {
+          temperature: this.temperature,
+        }
+      });
+      
+      response = result.response;
+      text = response.text();
+    } catch (error) {
+      if (error.status === 500) {
+        throw new Error(
+          `Google Gemini API error (500): This may be a temporary issue. Try again later or verify your API key and image. Original error: ${error.message}`
+        );
       }
-    });
-    
-    const response = result.response;
-    const text = response.text();
+      throw error;
+    }
     
     // Parse response
     const boxes = parseBoundingBoxes(text);
@@ -176,15 +186,25 @@ If an object is present multiple times, name them according to their unique char
     });
     
     // Generate content
-    const result = await model.generateContent({
-      contents: [{ role: 'user', parts: [{ text: prompt }, image] }],
-      generationConfig: {
-        temperature: this.temperature,
+    let result, response, text;
+    try {
+      result = await model.generateContent({
+        contents: [{ role: 'user', parts: [{ text: prompt }, image] }],
+        generationConfig: {
+          temperature: this.temperature,
+        }
+      });
+      
+      response = result.response;
+      text = response.text();
+    } catch (error) {
+      if (error.status === 500) {
+        throw new Error(
+          `Google Gemini API error (500): This may be a temporary issue. Try again later or verify your API key and image. Original error: ${error.message}`
+        );
       }
-    });
-    
-    const response = result.response;
-    const text = response.text();
+      throw error;
+    }
     
     // Parse response
     const boxes = parseBoundingBoxes(text);

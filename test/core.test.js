@@ -11,7 +11,7 @@ describe('VSegments', () => {
       const vseg = new VSegments({ apiKey: 'test-api-key' });
       
       expect(vseg.apiKey).toBe('test-api-key');
-      expect(vseg.model).toBe('gemini-flash-latest');
+      expect(vseg.model).toBe('gemini-3-pro-preview');
       expect(vseg.temperature).toBe(0.5);
       expect(vseg.maxObjects).toBe(25);
     });

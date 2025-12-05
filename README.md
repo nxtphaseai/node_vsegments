@@ -171,7 +171,7 @@ await vs.visualize('image.jpg', result, {
 ### API Options
 
 - `--api-key <key>`: Google API key (default: `GOOGLE_API_KEY` env var)
-- `-m, --model <model>`: Model name (default: `gemini-flash-latest`)
+- `-m, --model <model>`: Model name (default: `gemini-3-pro-preview`)
 - `--temperature <temp>`: Sampling temperature 0.0-1.0 (default: 0.5)
 - `--max-objects <n>`: Maximum objects to detect (default: 25)
 
@@ -361,6 +361,35 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+## Troubleshooting
+
+### Common Issues
+
+#### 500 Internal Server Error
+
+If you get a 500 error from the Google Gemini API:
+
+1. **Try a different model:**
+   ```javascript
+   const vs = new VSegments({ 
+     apiKey: 'YOUR_API_KEY',
+     model: 'gemini-3-pro-preview'  // default model
+   });
+   ```
+
+2. **Check your image:** Ensure it's under 4MB and in a supported format (JPG, PNG, GIF, WEBP)
+
+3. **Wait and retry:** The API may be experiencing temporary issues
+
+4. **Verify API key:** Make sure your API key is valid and has proper permissions
+
+For more detailed troubleshooting, see [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
+
+### Recommended Models
+
+- **Default (High quality):** `gemini-3-pro-preview`
+- **Alternative:** `gemini-2.5-flash`
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -374,6 +403,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Issues**: [GitHub Issues](https://github.com/nxtphaseai/vsegments/issues)
 - **Documentation**: [GitHub README](https://github.com/nxtphaseai/vsegments#readme)
+- **Troubleshooting**: [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 
 ---
 

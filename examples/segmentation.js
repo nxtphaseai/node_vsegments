@@ -32,7 +32,7 @@ async function main() {
   // Initialize with custom settings
   const vs = new VSegments({
     apiKey,
-    model: 'gemini-2.5-flash',
+    model: 'gemini-3-pro-preview',
     temperature: 0.4
   });
   
