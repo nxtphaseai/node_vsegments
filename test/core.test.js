@@ -118,6 +118,10 @@ describe('VSegments', () => {
       expect(vseg._getMimeType('image.webp')).toBe('image/webp');
     });
 
+    it('should return correct MIME type for svg', () => {
+      expect(vseg._getMimeType('image.svg')).toBe('image/svg+xml');
+    });
+
     it('should default to jpeg for unknown extensions', () => {
       expect(vseg._getMimeType('image.bmp')).toBe('image/jpeg');
       expect(vseg._getMimeType('image.tiff')).toBe('image/jpeg');

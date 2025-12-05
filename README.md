@@ -12,6 +12,7 @@
 - 🎯 **Bounding Box Detection**: Automatically detect and label objects in images
 - 🎨 **Segmentation Masks**: Generate precise segmentation masks for identified objects
 - 🖼️ **Visualization**: Beautiful visualization with customizable colors, fonts, and transparency
+- 📐 **SVG Support**: Automatic conversion of SVG files to raster format
 - 🛠️ **CLI Tool**: Powerful command-line interface for batch processing
 - 📦 **Library**: Clean JavaScript API for integration into your projects
 - 🚀 **Multiple Models**: Support for various Gemini models (Flash, Pro, etc.)
@@ -319,6 +320,7 @@ node segmentation.js path/to/image.jpg
   - `@google/generative-ai` ^0.21.0
   - `canvas` ^2.11.2
   - `commander` ^12.0.0
+  - `sharp` ^0.33.0 (for SVG support and better compatibility)
 
 ## Publishing to npm
 

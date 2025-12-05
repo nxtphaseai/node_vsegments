@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "types": "src/index.d.ts",
   "bin": {
-    "vsegments": "./bin/cli.js"
+    "vsegments": "bin/cli.js"
   },
   "scripts": {
     "test": "jest",
@@ -30,7 +30,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:nxtphaseai/node_vsegments.git"
+    "url": "git+ssh://git@github.com/nxtphaseai/node_vsegments.git"
   },
   "homepage": "https://github.com/nxtphaseai/node_vsegments#readme",
   "bugs": {
@@ -42,7 +42,8 @@
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
     "canvas": "^2.11.2",
-    "commander": "^12.0.0"
+    "commander": "^12.0.0",
+    "sharp": "^0.33.0"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",

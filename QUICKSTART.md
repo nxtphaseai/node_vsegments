@@ -99,6 +99,9 @@ vsegments -f image.jpg --json results.json
 
 # Customize visualization
 vsegments -f image.jpg -o output.jpg --line-width 6 --font-size 18
+
+# Works with SVG files too
+vsegments -f diagram.svg -o output.jpg
 ```
 
 ## Next Steps
@@ -125,7 +128,7 @@ export GOOGLE_API_KEY="your-key-here"
 ### Module Not Found
 
 ```
-Error: Cannot find module 'canvas'
+Error: Cannot find module 'canvas' or 'sharp'
 ```
 
 **Solution:** Reinstall dependencies:
@@ -134,16 +137,18 @@ Error: Cannot find module 'canvas'
 npm install
 ```
 
-On macOS, you may need:
+**Note:** This package uses `sharp` for better cross-platform compatibility. If you encounter build issues:
 
+On macOS:
 ```bash
 brew install pkg-config cairo pango libpng jpeg giflib librsvg
+npm install
 ```
 
 On Ubuntu/Debian:
-
 ```bash
 sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
+npm install
 ```
 
 ---

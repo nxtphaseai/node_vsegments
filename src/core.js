@@ -60,9 +60,19 @@ If an object is present multiple times, name them according to their unique char
    * @returns {Promise<Object>} - Image data for API
    */
   async _loadImage(imagePath) {
-    const imageBuffer = await fs.readFile(imagePath);
+    let imageBuffer = await fs.readFile(imagePath);
+    let mimeType = this._getMimeType(imagePath);
+    
+    // Convert SVG to PNG for API compatibility
+    if (mimeType === 'image/svg+xml') {
+      const sharp = require('sharp');
+      imageBuffer = await sharp(imageBuffer)
+        .png()
+        .toBuffer();
+      mimeType = 'image/png';
+    }
+    
     const base64Data = imageBuffer.toString('base64');
-    const mimeType = this._getMimeType(imagePath);
     
     return {
       inlineData: {
@@ -84,7 +94,8 @@ If an object is present multiple times, name them according to their unique char
       'jpeg': 'image/jpeg',
       'png': 'image/png',
       'gif': 'image/gif',
-      'webp': 'image/webp'
+      'webp': 'image/webp',
+      'svg': 'image/svg+xml'
     };
     return mimeTypes[ext] || 'image/jpeg';
   }
