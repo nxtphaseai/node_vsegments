@@ -1,0 +1,27 @@
+# Development files
+examples/
+.gitignore
+.eslintrc.json
+.prettierrc
+
+# Documentation (keep README.md)
+docs/
+
+# Testing
+test/
+*.test.js
+
+# IDE
+.idea/
+.vscode/
+
+# Git
+.git/
+.gitattributes
+
+# Output files
+output_*.jpg
+output_*.png
+segmented_*.jpg
+segmented_*.png
+results.json
