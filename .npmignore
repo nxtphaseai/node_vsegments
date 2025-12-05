@@ -25,3 +25,9 @@ output_*.png
 segmented_*.jpg
 segmented_*.png
 results.json
+
+# Test images
+*.jpg
+*.png
+!src/**/*.jpg
+!src/**/*.png

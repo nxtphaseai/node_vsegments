@@ -10,8 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint src/**/*.js",
-    "format": "prettier --write \"src/**/*.js\"",
-    "prepublishOnly": "npm run lint"
+    "format": "prettier --write \"src/**/*.js\""
   },
   "keywords": [
     "image",
@@ -28,11 +27,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git@github.com:nxtphaseai/vsegments.git"
+    "url": "git@github.com:nxtphaseai/node_vsegments.git"
   },
-  "homepage": "https://github.com/nxtphaseai/vsegments#readme",
+  "homepage": "https://github.com/nxtphaseai/node_vsegments#readme",
   "bugs": {
-    "url": "https://github.com/nxtphaseai/vsegments/issues"
+    "url": "https://github.com/nxtphaseai/node_vsegments/issues"
   },
   "engines": {
     "node": ">=16.0.0"
@@ -41,9 +40,5 @@
     "@google/generative-ai": "^0.21.0",
     "canvas": "^2.11.2",
     "commander": "^12.0.0"
-  },
-  "devDependencies": {
-    "eslint": "^8.57.0",
-    "prettier": "^3.2.5"
   }
 }
