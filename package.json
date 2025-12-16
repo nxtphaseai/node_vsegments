@@ -1,6 +1,6 @@
 {
   "name": "vsegments",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Visual segmentation and bounding box detection using Google Gemini AI",
   "main": "src/index.js",
   "types": "src/index.d.ts",
@@ -43,7 +43,8 @@
     "@google/generative-ai": "^0.21.0",
     "canvas": "^2.11.2",
     "commander": "^12.0.0",
-    "sharp": "^0.33.0"
+    "sharp": "^0.33.0",
+    "vsegments": "^0.1.4"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
